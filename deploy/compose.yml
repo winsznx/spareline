@@ -1,0 +1,77 @@
+# Spareline API + Postgres on a single VPS. Run from this directory: docker compose up -d --build
+# Expects an existing reverse proxy on the external `compose_default` network that forwards to spareline-api:8000.
+name: spareline
+
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: 10m
+    max-file: "3"
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: spareline
+      POSTGRES_DB: spareline
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+    secrets: [db_password]
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      default:
+        aliases: [spareline-db]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U spareline -d spareline"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    mem_limit: 512m
+    logging: *logging
+
+  seed:
+    image: spareline-api:latest
+    build: {context: .., dockerfile: deploy/api.Dockerfile}
+    command: ["python", "-m", "app.data.seed"]
+    env_file: ./api.env
+    depends_on:
+      db: {condition: service_healthy}
+    restart: "no"
+    mem_limit: 1g
+    logging: *logging
+
+  api:
+    image: spareline-api:latest
+    build: {context: .., dockerfile: deploy/api.Dockerfile}
+    restart: unless-stopped
+    env_file: ./api.env
+    depends_on:
+      seed: {condition: service_completed_successfully}
+    # Interim public origin for the Vercel rewrite until the shared Caddy host is approved.
+    ports:
+      - "0.0.0.0:8796:8000"
+    networks:
+      default: {}
+      edge:
+        aliases: [spareline-api]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://127.0.0.1:8000/v1/healthz')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    mem_limit: 1536m
+    cpus: 2.0
+    logging: *logging
+
+volumes:
+  db-data:
+
+secrets:
+  db_password:
+    file: ./secrets/db_password
+
+networks:
+  edge:
+    external: true
+    name: compose_default

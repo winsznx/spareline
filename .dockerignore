@@ -1,0 +1,11 @@
+**/.venv
+**/node_modules
+**/.next
+**/__pycache__
+data/raw
+internal
+apps
+artifacts
+deploy/secrets
+deploy/api.env
+**/.env
