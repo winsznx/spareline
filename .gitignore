@@ -1,0 +1,33 @@
+# dependencies and builds
+node_modules/
+.venv/
+.next/
+out/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.tsbuildinfo
+apps/web/public/vendor/
+apps/web/test-results/
+apps/web/playwright-report/
+
+# environment and deployment secrets
+.env
+.env.*
+!.env.example
+deploy/api.env
+deploy/secrets/
+.vercel/
+
+# research data: raw files are downloaded by the ingest step, never committed
+data/raw/
+data/processed/bundle.json
+
+# internal planning material and local scratch
+internal/
+artifacts/handoff-src/
+artifacts/draft/
+artifacts/render/
+artifacts/footage/
+.DS_Store

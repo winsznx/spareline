@@ -1,0 +1,66 @@
+{
+ "url": "https://spareline-steel.vercel.app",
+ "verified_at": "2026-11-10",
+ "team": "Team: to be confirmed by project owner",
+ "scenarios": {
+  "a": {
+   "scenario_id": "8185981a-14f8-4c7c-8ad7-ff10574e99c1",
+   "run_id": "12fe7677-524c-4b35-83a6-6a0362c321f9",
+   "state": "recommended",
+   "reasons": [],
+   "where": "DCH1, 2018-07-17 \u00b7 2 vans \u00b7 donor 90 min behind (simulated)",
+   "na": 30,
+   "nf": 19,
+   "sp": 2,
+   "moved": 30,
+   "duration_ms": 3756,
+   "poll_s": 6.9
+  },
+  "b": {
+   "scenario_id": "d711b3d2-5660-4c60-b58e-a0b4e1f638a0",
+   "run_id": "6c66370c-7adf-4ec0-bed1-759e4a377211",
+   "state": "no_safe_rescue",
+   "reasons": [
+    "HELPER_LATE_UNDER_CONSERVATIVE_TRAVEL",
+    "HELPER_WOULD_BE_LATE",
+    "MEETING_OUTSIDE_CALIBRATED_RANGE"
+   ],
+   "where": "DLA3, 2018-09-13 \u00b7 2 vans \u00b7 donor 90 min behind (simulated)",
+   "na": 46,
+   "nf": 46,
+   "sp": 46,
+   "moved": 0,
+   "duration_ms": 2956,
+   "poll_s": 4.0
+  },
+  "c": {
+   "scenario_id": "17d3d1ff-330f-4b2d-a82e-7191b174e3c4",
+   "run_id": "12abbae1-2fbe-449b-9aca-071b7ee136aa",
+   "state": "low_confidence",
+   "reasons": [
+    "GAIN_DISAPPEARS_UNDER_CONSERVATIVE_TRAVEL",
+    "HELPER_LATE_UNDER_CONSERVATIVE_TRAVEL",
+    "MEETING_OUTSIDE_CALIBRATED_RANGE"
+   ],
+   "where": "DSE4, 2018-07-05 \u00b7 2 vans \u00b7 donor 90 min behind (simulated)",
+   "na": 18,
+   "nf": 18,
+   "sp": 18,
+   "moved": 0,
+   "duration_ms": 2952,
+   "poll_s": 4.6
+  }
+ },
+ "bundle": {
+  "routes": 397,
+  "groups": 160,
+  "stops": 54405,
+  "packages": 94229
+ },
+ "acquired": "2026-11-10",
+ "desk_shot_ratio": 0.625,
+ "tests": {
+  "backend": 34,
+  "e2e_production": 24
+ }
+}

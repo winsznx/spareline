@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+title: "Spareline: late-route rescue decisions on historical delivery routes"
+message: "If you use this software, please cite it and the underlying dataset."
+type: software
+authors:
+  - name: "Spareline contributors"
+repository-code: "https://github.com/winsznx/spareline"
+url: "https://spareline-steel.vercel.app"
+license: MIT
+version: 1.0.0
+date-released: 2026-11-10
+keywords: [last-mile delivery, vehicle routing, OR-Tools, dispatch, operations research]
+references:
+  - type: article
+    title: "2021 Amazon Last Mile Routing Research Challenge: Data Set"
+    authors:
+      - family-names: Merchán
+        given-names: Daniel
+      - family-names: Arora
+        given-names: Jatin
+      - family-names: Pachon
+        given-names: Julian
+      - family-names: Konduri
+        given-names: Karthik
+      - family-names: Winkenbach
+        given-names: Matthias
+      - family-names: Parks
+        given-names: Steven
+      - family-names: Noszek
+        given-names: Joseph
+    journal: "Transportation Science"
+    year: 2022

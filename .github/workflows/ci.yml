@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  api:
+    name: API and solver
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: spareline
+          POSTGRES_PASSWORD: spareline
+          POSTGRES_DB: spareline
+        ports: ["5544:5432"]
+        options: >-
+          --health-cmd "pg_isready -U spareline" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql+psycopg://spareline:spareline@localhost:5544/spareline
+      RATE_LIMIT_PER_MINUTE: "100000"
+      RUN_RATE_LIMIT_PER_MINUTE: "10000"
+    defaults:
+      run:
+        working-directory: services/api
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+        with:
+          version: "0.5.11"
+      - run: uv python install 3.12
+      - run: uv sync --frozen
+      - run: uv run ruff check app scripts
+      - run: uv run python -m app.data.seed
+      - run: uv run python -m pytest -q
+
+  web:
+    name: Web app
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: apps/web/package.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: apps/web/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm build
+        env:
+          NEXT_PUBLIC_API_BASE_URL: /api/v1
