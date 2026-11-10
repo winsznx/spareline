@@ -162,4 +162,4 @@ The web app is on Vercel. The API and its own Postgres run as an isolated Docker
 
 Code: [MIT](LICENSE). Data and results derived from the Amazon Last Mile Routing Research Challenge: [CC BY-NC 4.0](DATA_LICENSE.md). Dataset paper: Merchán, D., et al. (2022), *2021 Amazon Last Mile Routing Research Challenge: Data Set*, Transportation Science. Optimization by [Google OR-Tools](https://developers.google.com/optimization). Map tiles from [OpenFreeMap](https://openfreemap.org), © OpenMapTiles, data © OpenStreetMap contributors.
 
-Built for [DataNova 2026](https://datanova-2026-global-data-thon.devpost.com/), challenge DN-OR-01. See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md) and [CITATION.cff](CITATION.cff).
+Built by Timothy Popoola and Anu Kolapo for [DataNova 2026](https://datanova-2026-global-data-thon.devpost.com/), challenge DN-OR-01. See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md) and [CITATION.cff](CITATION.cff).

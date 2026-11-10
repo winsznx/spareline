@@ -3,7 +3,10 @@ title: "Spareline: late-route rescue decisions on historical delivery routes"
 message: "If you use this software, please cite it and the underlying dataset."
 type: software
 authors:
-  - name: "Spareline contributors"
+  - given-names: Timothy
+    family-names: Popoola
+  - given-names: Anu
+    family-names: Kolapo
 repository-code: "https://github.com/winsznx/spareline"
 url: "https://spareline-steel.vercel.app"
 license: MIT

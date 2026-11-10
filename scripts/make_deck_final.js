@@ -11,7 +11,7 @@ const n0 = (v)=>Number(v).toLocaleString('en-US');
 
 const pptx = new pptxgen();
 pptx.layout = 'LAYOUT_WIDE';
-pptx.author = 'Spareline Project Team';
+pptx.author = 'Timothy Popoola, Anu Kolapo';
 pptx.subject = 'DataNova 2026 Global Data-thon: Spareline working product';
 pptx.title = 'Spareline | Rescue late deliveries';
 pptx.company = 'Spareline';
@@ -56,6 +56,7 @@ function miniNode(s,x,y,color=C.ink,r=.075){circle(s,x,y,r,C.white,color)}
  pill(s,'DATANOVA 2026  /  DN-OR-01',.75,1.78,3.08,C.slate,C.darkText,.39);
  txt(s,'When a delivery route\nfalls behind, know\nexactly what to move.',.76,2.37,7.55,2.24,{fontSize:36.6,bold:true,color:C.white,breakLine:false,valign:'top',lineSpacingMultiple:1.04});
  txt(s,'A dispatch decision tool for late-route recovery.',.76,5.17,6.9,.55,{fontSize:17.1,color:C.darkMuted});
+ txt(s,IN.team_names,.76,5.78,7.0,.40,{fontSize:14.2,bold:true,color:C.darkText});
  txt(s,'WORKING PRODUCT  •  '+IN.url.replace('https://','').toUpperCase(),.78,6.43,7.1,.30,{fontSize:10.2,bold:true,charSpacing:1.22,color:'C89A75',hyperlink:{url:IN.url}});
  // abstract route network—not a fake UI
  const x=8.90,y=1.18;

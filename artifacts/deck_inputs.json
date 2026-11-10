@@ -1,7 +1,7 @@
 {
  "url": "https://spareline-steel.vercel.app",
  "verified_at": "2026-11-10",
- "team": "Team: to be confirmed by project owner",
+ "team": "Team: Timothy Popoola and Anu Kolapo",
  "scenarios": {
   "a": {
    "scenario_id": "8185981a-14f8-4c7c-8ad7-ff10574e99c1",
@@ -62,5 +62,6 @@
  "tests": {
   "backend": 34,
   "e2e_production": 24
- }
+ },
+ "team_names": "Timothy Popoola  \u00b7  Anu Kolapo"
 }

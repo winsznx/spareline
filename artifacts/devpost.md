@@ -42,4 +42,4 @@ Historical routes with simulated disruptions. Progress is reconstructed, not GPS
 - Dataset: https://registry.opendata.aws/amazon-last-mile-challenges/ (CC BY-NC 4.0)
 
 ## Team
-Project team (add names and roles before submitting).
+Timothy Popoola and Anu Kolapo.
