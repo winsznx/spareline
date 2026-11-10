@@ -1,0 +1,44 @@
+[
+  {
+    "key": "a_route_falls_behind",
+    "title": "A route falls behind",
+    "group_id": "grp_DCH1_2018-07-17_7d25059387",
+    "donor_route_id": "RouteID_ae96c45f-9e01-462c-8f24-9d8298227ab7",
+    "seed": 1,
+    "shock": {
+      "kind": "delay",
+      "delay_minutes": 90,
+      "travel_time_factor": 1.0,
+      "failure_after_stop_index": null
+    },
+    "partition": "development"
+  },
+  {
+    "key": "b_helper_isnt_really_free",
+    "title": "A helper isn't really free",
+    "group_id": "grp_DLA3_2018-09-13_3ef6710f75",
+    "donor_route_id": "RouteID_57f06684-26a7-4e38-b735-ad3e115e424a",
+    "seed": 1,
+    "shock": {
+      "kind": "delay",
+      "delay_minutes": 90,
+      "travel_time_factor": 1.0,
+      "failure_after_stop_index": null
+    },
+    "partition": "development"
+  },
+  {
+    "key": "c_no_handoff_helps",
+    "title": "No handoff helps",
+    "group_id": "grp_DSE4_2018-07-05_5f51e1f3ac",
+    "donor_route_id": "RouteID_36f08b75-b60d-413a-a4cb-269ddd611227",
+    "seed": 1,
+    "shock": {
+      "kind": "delay",
+      "delay_minutes": 90,
+      "travel_time_factor": 1.0,
+      "failure_after_stop_index": null
+    },
+    "partition": "development"
+  }
+]

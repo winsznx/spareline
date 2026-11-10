@@ -1,0 +1,110 @@
+{
+  "scenario_count": 456,
+  "metrics": {
+    "missed_packages_avoided_vs_no_action": {
+      "numerator": 881,
+      "denominator": 24474
+    },
+    "scenarios_with_safe_rescue": {
+      "numerator": 74,
+      "denominator": 456
+    },
+    "at_risk_scenarios_abstained": {
+      "numerator": 280,
+      "denominator": 354
+    },
+    "helper_packages_newly_missed_by_spareline": 0,
+    "solver_p95_ms": 3646,
+    "scenarios": {
+      "total": 456,
+      "errors": 0,
+      "with_missed_packages_under_no_action": 354,
+      "states": {
+        "no_safe_rescue": 306,
+        "recommended": 74,
+        "low_confidence": 76
+      }
+    },
+    "packages": {
+      "remaining_total": 195279,
+      "windowed_total": 13894
+    },
+    "missed_packages": {
+      "no_intervention": 24474,
+      "nearest_feasible": 24889,
+      "spareline": 23593,
+      "spareline_conservative_travel": 23713,
+      "nearest_feasible_conservative_travel": 25145,
+      "denominator_remaining_packages": 195279
+    },
+    "windowed_on_time": {
+      "no_intervention": 12165,
+      "nearest_feasible": 12090,
+      "spareline": 12200,
+      "denominator_windowed": 13894
+    },
+    "delta_vs_no_action": {
+      "packages_saved_total": 881,
+      "mean_per_scenario": 1.932,
+      "ci95_mean_bootstrap": [
+        1.474,
+        2.434
+      ],
+      "spareline_better": 74,
+      "tie": 382,
+      "spareline_worse": 0
+    },
+    "delta_vs_nearest": {
+      "packages_total": 1296,
+      "mean_per_scenario": 2.842,
+      "ci95_mean_bootstrap": [
+        2.243,
+        3.518
+      ],
+      "spareline_better": 102,
+      "tie": 350,
+      "spareline_worse": 4
+    },
+    "helper_harm": {
+      "nearest_feasible_transfers": 56,
+      "nearest_feasible_newly_missed_helper_packages": 14,
+      "nearest_feasible_scenarios_harming_helper": 7,
+      "nearest_feasible_newly_missed_helper_packages_conservative": 129,
+      "spareline_recommendations": 74,
+      "spareline_newly_missed_helper_packages": 0
+    },
+    "cost_of_recommended_rescues": {
+      "count": 74,
+      "extra_drive_minutes_mean": 23.55,
+      "handoff_wait_minutes_mean": 7.1,
+      "transfer_stops_mean": 9.64
+    },
+    "abstention": {
+      "low_confidence": 76,
+      "no_safe_rescue_with_missed_packages": 204,
+      "denominator_scenarios_with_missed_packages": 354
+    },
+    "latency_ms": {
+      "mean": 1870.1,
+      "median": 2710,
+      "p95": 3646,
+      "max": 4703,
+      "note": "solver wall time per scenario on the evaluation machine, excludes HTTP"
+    },
+    "invariant_violations_in_emitted_plans": 0
+  },
+  "limitations": [
+    "Disruptions are simulated; routes are historical 2018 research data, not live operations.",
+    "Cross-route travel is estimated from distance; it is validated only on held-out within-route pairs.",
+    "The shift limit (planned finish + 60 min) and handoff duration are declared assumptions.",
+    "Only 7% of packages carry time windows; most missed packages come from the shift limit.",
+    "Results describe this model on this cohort, not field performance."
+  ],
+  "config_sha256": "21dfd2feb95904076b81af7a7e6ae7db24e2c2105cc68fc9ea31c50b0ecceb8d",
+  "evaluation_id": "eval_20261110T185425Z_21dfd2fe",
+  "started_at": "2026-11-10T18:54:25.681168+00:00",
+  "completed_at": "2026-11-10T18:56:07.588553+00:00",
+  "algorithm_version": "spareline-rescue-1.0.0",
+  "dataset_sha256": "2c2d17fa82ee92596d620f646c071b582fff440b84b04f0c29d02962431549e2",
+  "status": "completed"
+}

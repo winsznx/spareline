@@ -1,0 +1,24 @@
+{
+  "name": "spareline-heldout-v1",
+  "declared_at": "2026-11-10T19:00:00Z",
+  "declared_note": "Written after tuning on development-partition groups only and before running any evaluation-partition scenario.",
+  "partition": "evaluation",
+  "max_groups": 1000,
+  "group_selection": "All evaluation-partition groups from data/processed/bundle.json (same station + date, 2-4 routes, centroid <= 12 km, departure gap <= 90 min). No exclusions after results.",
+  "donor_rule": "sorted(route_ids)[sha256(group_id) mod n]",
+  "cutoff_rule": "40% of the donor's reconstructed route duration after departure",
+  "shocks": [
+    {"kind": "delay", "delay_minutes": 75, "travel_time_factor": 1.0},
+    {"kind": "delay", "delay_minutes": 105, "travel_time_factor": 1.0},
+    {"kind": "traffic_multiplier", "delay_minutes": 0, "travel_time_factor": 1.6},
+    {"kind": "vehicle_failure", "delay_minutes": 0, "travel_time_factor": 1.0, "failure_after_stop_index": 0}
+  ],
+  "seed": 2026,
+  "time_limit_s": 10,
+  "shift_slack_minutes": 60,
+  "handoff_seconds": "300 + 15 per package",
+  "objective": "lexicographic: missed packages (all vans), helper newly missed (strict 0), late minutes, added drive + wait, moved stops",
+  "robustness": "recommend only if improvement holds and helper gains no missed package with every cross-route edge at q90",
+  "baselines": ["no_intervention", "nearest_feasible"],
+  "travel_model": "xroute-quantile-1.0 fitted on development partition"
+}
