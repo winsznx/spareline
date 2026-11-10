@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" role="img" aria-labelledby="title desc">
+<title id="title">Spareline transfer mark</title>
+<desc id="desc">Two routes converging at a handoff node and diverging again.</desc>
+<rect width="320" height="320" rx="62" fill="#131920"/>
+<path d="M56 94H116Q140 94 153 120L174 159Q184 181 209 181H261" fill="none" stroke="#F4F5F6" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M56 223H116Q141 223 154 198L174 159Q184 137 209 137H261" fill="none" stroke="#8DABBB" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="174" cy="159" r="21" fill="#A76941" stroke="#131920" stroke-width="7"/>
+</svg>

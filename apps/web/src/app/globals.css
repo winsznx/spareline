@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  --canvas: #ffffff;
+  --surface: #f7f8fa;
+  --raised: #ffffff;
+  --ink: #171c22;
+  --ink-2: #58636e;
+  --ink-3: #77818b;
+  --line: #e2e6ea;
+  --graphite: #131920;
+  --copper: #a76941;
+  --copper-ink: #8a4f2c;
+  --copper-soft: #f6ede6;
+  --success: #187451;
+  --success-soft: #e7f3ed;
+  --warning: #b66d22;
+  --warning-ink: #8f5317;
+  --warning-soft: #fbf1e4;
+  --danger: #b53c3c;
+  --danger-soft: #f9e9e9;
+  --route-donor: #171c22;
+  --route-helper: #a76941;
+  --route-other: #426886;
+  --focus: #426886;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --canvas: #0d1217;
+    --surface: #151c23;
+    --raised: #1b242d;
+    --ink: #f1f4f6;
+    --ink-2: #a7b2bd;
+    --ink-3: #8c97a2;
+    --line: #2a343f;
+    --graphite: #0a0e12;
+    --copper: #c1875b;
+    --copper-ink: #d29a6f;
+    --copper-soft: #2a2119;
+    --success: #4fb489;
+    --success-soft: #14261f;
+    --warning: #d8964f;
+    --warning-ink: #e0a463;
+    --warning-soft: #2a2117;
+    --danger: #e07a7a;
+    --danger-soft: #2c1a1b;
+    --route-donor: #f1f4f6;
+    --route-helper: #c1875b;
+    --route-other: #7fa3c1;
+    --focus: #8db3d4;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --canvas: #0d1217;
+  --surface: #151c23;
+  --raised: #1b242d;
+  --ink: #f1f4f6;
+  --ink-2: #a7b2bd;
+  --ink-3: #8c97a2;
+  --line: #2a343f;
+  --graphite: #0a0e12;
+  --copper: #c1875b;
+  --copper-ink: #d29a6f;
+  --copper-soft: #2a2119;
+  --success: #4fb489;
+  --success-soft: #14261f;
+  --warning: #d8964f;
+  --warning-ink: #e0a463;
+  --warning-soft: #2a2117;
+  --danger: #e07a7a;
+  --danger-soft: #2c1a1b;
+  --route-donor: #f1f4f6;
+  --route-helper: #c1875b;
+  --route-other: #7fa3c1;
+  --focus: #8db3d4;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-graphite: var(--graphite);
+  --color-copper: var(--copper);
+  --color-copper-ink: var(--copper-ink);
+  --color-copper-soft: var(--copper-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-ink: var(--warning-ink);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-route-donor: var(--route-donor);
+  --color-route-helper: var(--route-helper);
+  --color-route-other: var(--route-other);
+  --font-sans: var(--font-geist-sans), Manrope, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, monospace;
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --radius-panel: 16px;
+}
+
+html {
+  background: var(--canvas);
+}
+
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-text-size-adjust: 100%;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: var(--copper-soft);
+  color: var(--ink);
+}
+
+input[type="range"] {
+  accent-color: var(--copper-ink);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--copper-ink);
+}
+
+.maplibregl-ctrl-attrib {
+  font-family: var(--font-sans);
+  font-size: 11px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+    color: #000;
+  }
+}
+
+@keyframes sl-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sl-spin {
+  animation: sl-spin 0.9s linear infinite;
+}
+
+.screen {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.screen-map {
+  height: 100vh;
+  height: 100svh;
+}
